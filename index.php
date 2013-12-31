@@ -9,10 +9,12 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Static Top Navbar Example for Bootstrap</title>
+    <title>Demo Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/pygments-manni.css" rel="stylesheet">
+
 
     <!-- Custom styles for this template -->
     <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
@@ -33,13 +35,7 @@
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Interactive Demo</a>
+          <a class="navbar-brand" href="#">Homepage</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -50,37 +46,108 @@
 
 
     <div class="container">
-
+    <!-- DESCRIPTION AREA -->
+      This is an example of how to create a table in html.
       <div class="row">
-        
+      <!-- HTML CODE AREA -->
         <div class="col-md-6">
-          <h1>HTML</h1>
-          <textarea id="htmlbox" rows="10" cols="50"><!-- Place HTML here! -->
-<h1> Hello World! </h1>
-<h2> Hello World! </h2>
-<p> BLAH </p>
-          </textarea>
+	        <h4>HTML</h4>
+			<textarea class="htmlbox" rows="10" cols="50" readonly>
+<table border="1">
+<tr>
+<td>row 1, cell 1</td>
+<td>row 1, cell 2</td>
+</tr>
+<tr>
+<td>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+</tr>
+</table>
+        	</textarea>
+
+        </div>
+        <!-- CSS CODE AREA -->
+        <div class="col-md-6">
+          <h4>CSS</h4>
+			<textarea class="cssbox" rows="10" cols="50" readonly>
+/* CSS goes here! */
+        	</textarea>          
         </div>
 
-        <div class="col-md-6">
-          <h1>CSS</h1>
-          <textarea id="cssbox" rows="10" cols="50">/* Place CSS here! */
-h1 {background-color:#6495ed;color:sienna;}
-          </textarea>
-          
-        </div>
       </div>
-      <div class="col-md-5"></div>
-      <div class="col-md-2">
-        <input id="tryitbutton" type="submit" value="Try it!">
+      <br>
+      <div class="row">
+			<button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
+			<button type="button" class="interactbtn btn btn-info btn-lg">Interactive Mode</button>
       </div>
-      <div class="col-md-5"></div>
-    </div> <!-- /container -->
-    
-    <div id="demoarea" style="margin:25px;">
-    DEMO AREA
-    </div>
+      <!-- RESULT AREA -->
+      <div class="displaybox row" style="display: none">
+      	<div class="jumbotron">
+			<table border="1">
+				<tr>
+				<td>row 1, cell 1</td>
+				<td>row 1, cell 2</td>
+				</tr>
+				<tr>
+				<td>row 2, cell 1</td>
+				<td>row 2, cell 2</td>
+				</tr>
+			</table>
+      	</div>
+      </div>
+     </div>
 
+     <div class="container">
+    <!-- DESCRIPTION AREA -->
+      This is an example of how to create a table in html.
+      <div class="row">
+      <!-- HTML CODE AREA -->
+        <div class="col-md-6">
+	        <h4>HTML</h4>
+			<textarea class="htmlbox" rows="10" cols="50" readonly>
+<table border="1">
+<tr>
+<td>row 1, cell 1</td>
+<td>row 1, cell 2</td>
+</tr>
+<tr>
+<td>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+</tr>
+</table>
+        	</textarea>
+
+        </div>
+        <!-- CSS CODE AREA -->
+        <div class="col-md-6">
+          <h4>CSS</h4>
+			<textarea class="cssbox" rows="10" cols="50" readonly>
+/* CSS goes here! */
+        	</textarea>          
+        </div>
+
+      </div>
+      <br>
+      <div class="row">
+			<button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
+			<button type="button" class="interactbtn btn btn-info btn-lg">Interactive Mode</button>
+      </div>
+      <!-- RESULT AREA -->
+      <div class="displaybox row" style="display: none">
+      	<div class="jumbotron">
+			<table border="1">
+				<tr>
+				<td>row 1, cell 1</td>
+				<td>row 1, cell 2</td>
+				</tr>
+				<tr>
+				<td>row 2, cell 1</td>
+				<td>row 2, cell 2</td>
+				</tr>
+			</table>
+      	</div>
+      </div>
+     </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -97,10 +164,6 @@ h1 {background-color:#6495ed;color:sienna;}
             $("div#demoarea").html(html_str);
             $('head').append(
                 '<style>'+
-                // 'hr {color:sienna;}\
-                // h1 {color:sienna;}\
-                // p {margin-left:20px;}\
-                // body {background-color:blue;}'
                 css_str
                 +'</style>'
             );
@@ -109,5 +172,10 @@ h1 {background-color:#6495ed;color:sienna;}
       }
       );
     </script>
+    <script>
+		$( ".viewbtn" ).click(function() {
+		  $(this).parent().parent().children(".displaybox").toggle();
+		});
+	</script>
   </body>
 </html>
