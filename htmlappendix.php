@@ -172,29 +172,94 @@
      </div>
 
 
+      <div id="list">
+      </div>
+
     </div>
 
-
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-    // toggle the content view 
-		$( ".viewbtn" ).click(function() {
-		  $(this).parent().parent().children(".displaybox").toggle();
-		});
-  //   $('#sidebar').affix({
-  //     offset: {
-  //       top: $('.navbar-default').height()
-  //     }
-  //   }); 
-	 // load scrollspy
-    $(document).ready(function(){
-        $("body").scrollspy({target: "#side-nav", offset:50});
-    });
+    <script type="text/javascript" src="js/handlebars-v1.3.0.js"></script>
+    <script type="text/javascript" src="htmlcontent.js"></script>
+    
+    <script id="people-template" type="text/x-handlebars-template">
+      {{#each people}}
+        <div class="person">
+          <h2>{{first_name}} {{last_name}}</h2>
+          <div class="phone">{{{phone}}}</div>
+          <div class="plaintext">{{phone}}</div>
+          <div class="email"><a href="mailto:{{email}}">{{email}}</a></div>
+          <div class="since">User since {{member_since}}</div>
+        </div>
+      {{/each}}
+    </script>
 
-  </script>
+
+    <script id="html-item-template" type="text/x-handlebars-template">
+      {{#each htmlitem}}
+        <a id="{{topic}}"></a>
+        <h4>{{topic}}</h4>
+        <div class="container">
+          <p>{{description}}</p>
+
+          <div class="row">
+          
+            {{! html code }}
+            <div class="col-md-6">
+              <h4>HTML</h4>
+              <textarea class="htmlbox" rows="10" cols="50" readonly>
+{{html}}     
+              </textarea>
+            </div>
+          
+            {{! css code}}
+            <div class="col-md-6">
+              <h4>CSS</h4>
+              <textarea class="cssbox" rows="10" cols="50" readonly>
+{{css}}
+              </textarea>          
+            </div>
+          
+          </div>
+          <br>
+          
+          {{! buttons }}
+          <div class="row">
+            <div class="col-md-6">
+            <button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
+            <button type="button" class="interactbtn btn btn-info btn-lg">Interactive Mode</button>
+            </div>
+          </div>
+          
+          {{! result }}
+          <div class="displaybox row" style="display: none">
+            <div class="jumbotron">
+{{{html}}}
+            </div>
+          </div>
+
+        </div>
+      {{/each}}
+    </script>
+
+    <script>
+      // toggle the content view 
+      $( ".viewbtn" ).click(function() {
+        $(this).parent().parent().children(".displaybox").toggle();
+      });
+      $(document).ready(function(){
+        // load content via handlebars
+        htmllist();
+        // load scrollspy
+        $("body").scrollspy({target: "#side-nav", offset:50});
+      });
+
+    </script>
+
+
   </body>
 </html>
