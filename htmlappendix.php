@@ -61,115 +61,8 @@
         <a name="tables" id="tables"></a>
         <h4>Tables</h4>
 
-    <div class="container">
-    <!-- DESCRIPTION AREA -->
-      This is an example of how to create a table in html.
-      <div class="row">
-      <!-- HTML CODE AREA -->
-        <div class="col-md-6">
-          <h4>HTML</h4>
-      <textarea class="htmlbox" rows="10" cols="50" readonly>
-<table border="1">
-<tr>
-<td>row 1, cell 1</td>
-<td>row 1, cell 2</td>
-</tr>
-<tr>
-<td>row 2, cell 1</td>
-<td>row 2, cell 2</td>
-</tr>
-</table>
-          </textarea>
-
-        </div>
-        <!-- CSS CODE AREA -->
-        <div class="col-md-6">
-          <h4>CSS</h4>
-      <textarea class="cssbox" rows="10" cols="50" readonly>
-/* CSS goes here! */
-          </textarea>          
-        </div>
-
-      </div>
-      <br>
-      <div class="row">
-      <button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
-      <button type="button" class="interactbtn btn btn-info btn-lg">Interactive Mode</button>
-      </div>
-      <!-- RESULT AREA -->
-      <div class="displaybox row" style="display: none">
-        <div class="jumbotron">
-      <table border="1">
-        <tr>
-        <td>row 1, cell 1</td>
-        <td>row 1, cell 2</td>
-        </tr>
-        <tr>
-        <td>row 2, cell 1</td>
-        <td>row 2, cell 2</td>
-        </tr>
-      </table>
-        </div>
-      </div>
-     </div>
-
-
-
         <a name="properties" id="properties"></a>
         <h4>Company Properties</h4>
-             <div class="container">
-    <!-- DESCRIPTION AREA -->
-      This is an example of how to create a table in HTML.
-      <div class="row">
-      <!-- HTML CODE AREA -->
-        <div class="col-md-6">
-          <h4>HTML</h4>
-      <textarea class="htmlbox" rows="10" cols="50" readonly>
-<table border="1">
-<tr>
-<td>row 1, cell 1</td>
-<td>row 1, cell 2</td>
-</tr>
-<tr>
-<td>row 2, cell 1</td>
-<td>row 2, cell 2</td>
-</tr>
-</table>
-          </textarea>
-
-        </div>
-        <!-- CSS CODE AREA -->
-        <div class="col-md-6">
-          <h4>CSS</h4>
-      <textarea class="cssbox" rows="10" cols="50" readonly>
-/* CSS goes here! */
-          </textarea>          
-        </div>
-
-      </div>
-      <br>
-
-
-      <div class="row">
-      <button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
-      <button type="button" class="interactbtn btn btn-info btn-lg">Interactive Mode</button>
-      </div>
-      <!-- RESULT AREA -->
-      <div class="displaybox row" style="display: none">
-        <div class="jumbotron">
-      <table border="1">
-        <tr>
-        <td>row 1, cell 1</td>
-        <td>row 1, cell 2</td>
-        </tr>
-        <tr>
-        <td>row 2, cell 1</td>
-        <td>row 2, cell 2</td>
-        </tr>
-      </table>
-        </div>
-      </div>
-     </div>
 
 
       <div id="list">
@@ -247,15 +140,20 @@
     </script>
 
     <script>
-      // toggle the content view 
-      $( ".viewbtn" ).click(function() {
-        $(this).parent().parent().children(".displaybox").toggle();
-      });
+      
       $(document).ready(function(){
         // load content via handlebars
         htmllist();
         // load scrollspy
         $("body").scrollspy({target: "#side-nav", offset:50});
+
+        $(document).on("click", ".viewbtn", function(){
+          $(this).parent().parent().parent().children(".displaybox").toggle();
+        });
+        // // toggle the content view 
+        // $( ".viewbtn" ).click(function() {
+        //   $(this).parent().parent().children(".displaybox").toggle();
+        // });
       });
 
     </script>

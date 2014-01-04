@@ -12,7 +12,7 @@
     <title>Demo Page</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/yeti.css" rel="stylesheet">
     <link href="css/pygments-manni.css" rel="stylesheet">
 
 
