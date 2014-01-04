@@ -39,7 +39,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>            
+            <li class="active"><a href="index.php">Home</a></li> 
+            <li class="inactive"><a href="htmlappendix.php">HTML Appendix</a></li>         
         </div><!--/.nav-collapse -->
       </div>
     </div>
@@ -134,14 +135,12 @@
 
   	</div>
 
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/holder.js"></script>
-
 
   </body>
 </html>
