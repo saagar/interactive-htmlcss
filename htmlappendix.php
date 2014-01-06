@@ -47,27 +47,20 @@
 
 
     <div id="side-nav" class="col-sm-2 hidden-xs hidden-sm hidden-print">
-        <ul class="nav nav-pills nav-stacked affix">
-            <li><a href="#tables">Tables</a></li>
-            <li><a href="#properties">Company Properties</a>
-            <li><a href="#genome">Buyers/Suppliers</a>
-            <li><a href="#blog">Recent Blog</a>
-            <li><a href="#tests">Total Tests</a>
-            <li><a href="#company-bio">Company Bio</a>
+      <ul id="sidenavlist" class="nav nav-pills nav-stacked affix">
+          <!--
+          <li><a href="#tables">Tables</a></li>
+          <li><a href="#properties">Company Properties</a>
+          <li><a href="#genome">Buyers/Suppliers</a>
+          <li><a href="#blog">Recent Blog</a>
+          <li><a href="#tests">Total Tests</a>
+          <li><a href="#company-bio">Company Bio</a>
+          -->
        </ul>
     </div>
 
     <div id="appendix-content" class="col-xs-12 col-sm-12 col-md-10">
-        <a name="tables" id="tables"></a>
-        <h4>Tables</h4>
-
-        <a name="properties" id="properties"></a>
-        <h4>Company Properties</h4>
-
-
-      <div id="list">
-      </div>
-
+      <div id="htmllist"></div>
     </div>
 
     
@@ -78,7 +71,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/handlebars-v1.3.0.js"></script>
     <script type="text/javascript" src="htmlcontent.js"></script>
-    
+    <!-- Sample Template -->
+    <!--
     <script id="people-template" type="text/x-handlebars-template">
       {{#each people}}
         <div class="person">
@@ -90,7 +84,13 @@
         </div>
       {{/each}}
     </script>
+    -->
 
+    <script id="sidenav-template" type="text/x-handlebars-template">
+      {{#each htmlitem}}
+        <li><a href="#{{topic}}">{{topic}}</a></li>
+      {{/each}}
+    </script>
 
     <script id="html-item-template" type="text/x-handlebars-template">
       {{#each htmlitem}}
@@ -104,17 +104,21 @@
             {{! html code }}
             <div class="col-md-6">
               <h4>HTML</h4>
-              <textarea class="htmlbox" rows="10" cols="50" readonly>
+              <pre>
+              {{!<textarea class="htmlbox" rows="10" cols="50" readonly>}}
 {{html}}     
-              </textarea>
+              {{!</textarea>}}
+              </pre>
             </div>
           
             {{! css code}}
             <div class="col-md-6">
               <h4>CSS</h4>
-              <textarea class="cssbox" rows="10" cols="50" readonly>
+              <pre>
+              {{!<textarea class="cssbox" rows="10" cols="50" readonly>}}
 {{css}}
-              </textarea>          
+              {{!</textarea>}}
+              </pre>          
             </div>
           
           </div>
@@ -146,14 +150,10 @@
         htmllist();
         // load scrollspy
         $("body").scrollspy({target: "#side-nav", offset:50});
-
+        // toggle the content view 
         $(document).on("click", ".viewbtn", function(){
           $(this).parent().parent().parent().children(".displaybox").toggle();
         });
-        // // toggle the content view 
-        // $( ".viewbtn" ).click(function() {
-        //   $(this).parent().parent().children(".displaybox").toggle();
-        // });
       });
 
     </script>

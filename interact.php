@@ -93,8 +93,7 @@ h1 {background-color:#6495ed;color:sienna;}
             var html_str = $("#htmlbox").val();
             var css_str = $("#cssbox").val();
             alert(html_str);
-            $("div#demoarea").html(html_str);
-            $('head').append(
+            $('div#demoarea').html(
                 '<style>'+
                 // 'hr {color:sienna;}\
                 // h1 {color:sienna;}\
@@ -103,6 +102,7 @@ h1 {background-color:#6495ed;color:sienna;}
                 css_str
                 +'</style>'
             );
+            $("div#demoarea").append(html_str);
           }
         );
       }

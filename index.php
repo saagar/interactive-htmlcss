@@ -56,7 +56,8 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="item active">        
+        <div class="item active">
+          <img src="img/5.jpg" alt="First slide">        
           <div class="container">
             <div class="carousel-caption">
               <h1>What's a website?</h1>
@@ -65,7 +66,8 @@
             </div>
           </div>
         </div>
-        <div class="item">          
+        <div class="item">
+          <img src="img/6.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Build pages with HTML basics!</h1>
@@ -75,6 +77,7 @@
           </div>
         </div>
         <div class="item">
+          <img src="img/7.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Style your site with CSS!</h1>
