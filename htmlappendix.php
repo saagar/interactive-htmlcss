@@ -98,9 +98,8 @@
         <h4>{{topic}}</h4>
         <div class="container">
           <p>{{description}}</p>
-
+    
           <div class="row">
-          
             {{! html code }}
             <div class="col-md-6">
               <h4>HTML</h4>
@@ -124,14 +123,21 @@
           </div>
           <br>
           
-          {{! buttons }}
-          <div class="row">
-            <div class="col-md-6">
-            <button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
-            <button type="button" class="interactbtn btn btn-info btn-lg">Interactive Mode</button>
+          <form action="interact.php" method="post" id="form{{@index}}">
+            <input type="hidden" name="formid" value="form{{@index}}">
+            {{!hidden form inputs}}
+            <textarea style="display:none;" name="htmlbox" rows="10" cols="50" form="form{{@index}}" readonly>{{html}}</textarea>
+            <textarea style="display:none;" name="cssbox" rows="10" cols="50" form="form{{@index}}" readonly>{{css}}</textarea>
+
+            {{! buttons }}
+            <div class="row">
+              <div class="col-md-6">
+              <button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
+              <input type="submit" class="interactbtn btn btn-info btn-lg" value="Interactive Mode">
+              </div>
             </div>
-          </div>
-          
+          </form>
+
           {{! result }}
           <div class="displaybox row" style="display: none">
             <div class="jumbotron">
@@ -152,7 +158,7 @@
         $("body").scrollspy({target: "#side-nav", offset:50});
         // toggle the content view 
         $(document).on("click", ".viewbtn", function(){
-          $(this).parent().parent().parent().children(".displaybox").toggle();
+          $(this).parent().parent().parent().parent().children(".displaybox").toggle();
         });
       });
 

@@ -6,18 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Static Top Navbar Example for Bootstrap</title>
+    <title>HTML and CSS Interactive Viewer</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/yeti.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,24 +43,42 @@
       </div>
     </div>
 
-
     <div class="container">
 
       <div class="row">
         
         <div class="col-md-6">
-          <h1>HTML</h1>
+          HTML<br>
           <textarea id="htmlbox" rows="10" cols="50"><!-- Place HTML here! -->
-<h1> Hello World! </h1>
-<h2> Hello World! </h2>
-<p> BLAH </p>
+          <?
+            if (isset($_POST["formid"])) {
+              echo $_POST["htmlbox"];
+            }
+            else {
+print '
+<h1> This is an h1 tag! </h1>
+<h2> This is an h2 tag! </h2>
+<p> This is a p tag! </p>';
+
+            }
+          ?>
           </textarea>
         </div>
 
         <div class="col-md-6">
-          <h1>CSS</h1>
+          CSS<br>
           <textarea id="cssbox" rows="10" cols="50">/* Place CSS here! */
-h1 {background-color:#6495ed;color:sienna;}
+            <?
+            if (isset($_POST["formid"])) {
+              echo $_POST["cssbox"];
+            }
+            else {
+print '
+h1 {background-color:#6495ed;color:sienna;}';
+
+            }
+          ?>
+
           </textarea>
           
         </div>
@@ -76,8 +90,10 @@ h1 {background-color:#6495ed;color:sienna;}
       <div class="col-md-5"></div>
     </div> <!-- /container -->
     
-    <div id="demoarea" style="margin:25px;">
-    DEMO AREA
+    <div style="margin:25px;">
+      <div div id="demoarea">
+      Your demo will appear here!
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -86,27 +102,27 @@ h1 {background-color:#6495ed;color:sienna;}
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-      $(function()
-      {
-        $("#tryitbutton").click(
-          function(){
-            var html_str = $("#htmlbox").val();
-            var css_str = $("#cssbox").val();
-            alert(html_str);
-            $('div#demoarea').html(
-                '<style>'+
-                // 'hr {color:sienna;}\
-                // h1 {color:sienna;}\
-                // p {margin-left:20px;}\
-                // body {background-color:blue;}'
-                css_str
-                +'</style>'
-            );
-            $("div#demoarea").append(html_str);
-          }
-        );
+      function interact(){
+        var html_str = $("#htmlbox").val();
+        var css_str = $("#cssbox").val();
+        $('div#demoarea').html('<style>'+ css_str+'</style>');
+        $("div#demoarea").append(html_str);
       }
-      );
+
+      $(document).ready(function(){
+        // setup the event handler for try it button
+        $(document).on("click", "#tryitbutton", interact);
+      });
     </script>
+
+    <? // load if $_POST sent ?>
+    <?php if (isset($_POST["formid"])) : ?>
+    <script type='text/javascript'>
+       //Code runs ONLY if $test_details['done_test'] is empty
+       $(document).ready(function(){
+         interact();
+       });
+    </script>
+    <?php endif; ?>
   </body>
 </html>
