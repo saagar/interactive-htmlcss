@@ -2,7 +2,7 @@ function htmllist(){
 
     // compile our template
     var template = Handlebars.compile($("#html-item-template").html());
-    var sidenav = Handlebars.compile($("#sidenav-template").html());
+    // var sidenav = Handlebars.compile($("#sidenav-template").html());
     var pagenav = Handlebars.compile($("#pagenav-template").html());
 
     var data = {
@@ -56,7 +56,7 @@ function htmllist(){
       ]
     };
 
-    $('#sidenavlist').html(sidenav(data));
+    // $('#sidenavlist').html(sidenav(data));
     $('#pageitems').html(pagenav(data));
     $('#htmllist').html(template(data));
 }

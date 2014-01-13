@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
     <title>Demo Page</title>
 
@@ -86,12 +85,9 @@
       <ul id="sidenavlist" class="nav nav-pills nav-stacked affix"></ul>
     </div> -->
 
-    <div class="">
     <div id="appendix-content" class="col-xs-12 col-sm-12 col-md-12">
       <div id="htmllist"></div>
     </div>
-    </div>
-
     
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -116,11 +112,13 @@
     <script id="html-item-template" type="text/x-handlebars-template">
       {{#each htmlitem}}
         <a id="{{topic}}"></a>
-        <h3>{{topic}}</h3>
         <div class="row">
           <div class="row">
             <div class="col-md-1"></div>
-            <p>{{description}}</p>
+            <div class="col-md-11">
+              <h2>{{topic}}</h2>
+              <p>{{description}}</p>
+            </div>
           </div>
 
           <div class="row">
