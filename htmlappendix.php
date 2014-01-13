@@ -1,4 +1,6 @@
-
+<?
+  require_once("helpers.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,53 +16,80 @@
     <!-- Bootstrap core CSS -->
     <link href="css/yeti.css" rel="stylesheet">
     <link href="css/pygments-manni.css" rel="stylesheet">
-
-
-    <!-- Custom styles for this template -->
-    <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <style type="text/css">
+      /*@media (min-width: 980px) { body { padding-top: 120px; } }*/
+    </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
+    <link href="css/carousel.css" rel="stylesheet">
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#navbar-scroller" data-offset="70">
 
-    <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.php">Homepage</a>
+    <? generateNavbar(); ?>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/5.jpg" alt="First slide">        
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>How do you use tables?</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="inactive"><a href="index.php">Home</a></li> 
-            <li class="active"><a href="htmlappendix.php">HTML Appendix</a></li>         
-        </div><!--/.nav-collapse -->
+        <div class="item">
+          <img src="img/6.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Build pages with HTML basics!</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/7.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Style your site with CSS!</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
 
 
-    <div id="side-nav" class="col-sm-2 hidden-xs hidden-sm hidden-print">
-      <ul id="sidenavlist" class="nav nav-pills nav-stacked affix">
-          <!--
-          <li><a href="#tables">Tables</a></li>
-          <li><a href="#properties">Company Properties</a>
-          <li><a href="#genome">Buyers/Suppliers</a>
-          <li><a href="#blog">Recent Blog</a>
-          <li><a href="#tests">Total Tests</a>
-          <li><a href="#company-bio">Company Bio</a>
-          -->
-       </ul>
-    </div>
+   <!--  <div id="side-nav" class="col-sm-2 hidden-xs hidden-sm hidden-print">
+      <ul id="sidenavlist" class="nav nav-pills nav-stacked affix"></ul>
+    </div> -->
 
-    <div id="appendix-content" class="col-xs-12 col-sm-12 col-md-10">
+    <div class="">
+    <div id="appendix-content" class="col-xs-12 col-sm-12 col-md-12">
       <div id="htmllist"></div>
+    </div>
     </div>
 
     
@@ -70,23 +99,15 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/handlebars-v1.3.0.js"></script>
-    <script type="text/javascript" src="htmlcontent.js"></script>
-    <!-- Sample Template -->
-    <!--
-    <script id="people-template" type="text/x-handlebars-template">
-      {{#each people}}
-        <div class="person">
-          <h2>{{first_name}} {{last_name}}</h2>
-          <div class="phone">{{{phone}}}</div>
-          <div class="plaintext">{{phone}}</div>
-          <div class="email"><a href="mailto:{{email}}">{{email}}</a></div>
-          <div class="since">User since {{member_since}}</div>
-        </div>
-      {{/each}}
-    </script>
-    -->
+    <script type="text/javascript" src="content/htmlcontent.js"></script>
 
     <script id="sidenav-template" type="text/x-handlebars-template">
+      {{#each htmlitem}}
+        <li><a href="#{{topic}}">{{topic}}</a></li>
+      {{/each}}
+    </script>
+
+    <script id="pagenav-template" type="text/x-handlebars-template">
       {{#each htmlitem}}
         <li><a href="#{{topic}}">{{topic}}</a></li>
       {{/each}}
@@ -95,28 +116,31 @@
     <script id="html-item-template" type="text/x-handlebars-template">
       {{#each htmlitem}}
         <a id="{{topic}}"></a>
-        <h4>{{topic}}</h4>
-        <div class="container">
-          <p>{{description}}</p>
-    
+        <h3>{{topic}}</h3>
+        <div class="row">
           <div class="row">
+            <div class="col-md-1"></div>
+            <p>{{description}}</p>
+          </div>
+
+          <div class="row">
+            
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+
             {{! html code }}
-            <div class="col-md-6">
+            <div class="col-md-4">
               <h4>HTML</h4>
               <pre>
-              {{!<textarea class="htmlbox" rows="10" cols="50" readonly>}}
 {{html}}     
-              {{!</textarea>}}
               </pre>
             </div>
           
             {{! css code}}
-            <div class="col-md-6">
+            <div class="col-md-4">
               <h4>CSS</h4>
               <pre>
-              {{!<textarea class="cssbox" rows="10" cols="50" readonly>}}
 {{css}}
-              {{!</textarea>}}
               </pre>          
             </div>
           
@@ -124,24 +148,30 @@
           <br>
           
           <form action="interact.php" method="post" id="form{{@index}}">
-            <input type="hidden" name="formid" value="form{{@index}}">
             {{!hidden form inputs}}
+            <input type="hidden" name="formid" value="form{{@index}}">
             <textarea style="display:none;" name="htmlbox" rows="10" cols="50" form="form{{@index}}" readonly>{{html}}</textarea>
             <textarea style="display:none;" name="cssbox" rows="10" cols="50" form="form{{@index}}" readonly>{{css}}</textarea>
 
             {{! buttons }}
             <div class="row">
+              <div class="col-md-3"></div>
               <div class="col-md-6">
               <button type="button" class="viewbtn btn btn-success btn-lg">View result</button>
               <input type="submit" class="interactbtn btn btn-info btn-lg" value="Interactive Mode">
               </div>
             </div>
           </form>
+          <br>
 
           {{! result }}
           <div class="displaybox row" style="display: none">
-            <div class="jumbotron">
+            <div class="col-md-2"></div>
+            {{! center rows }}
+            <div class="col-md-8">
+              <div class="jumbotron">
 {{{html}}}
+              </div>
             </div>
           </div>
 
@@ -155,7 +185,8 @@
         // load content via handlebars
         htmllist();
         // load scrollspy
-        $("body").scrollspy({target: "#side-nav", offset:50});
+        // $("body").scrollspy({target: "#side-nav", offset:50});
+        $("body").scrollspy({target: "#nav-bar", offset:50});
         // toggle the content view 
         $(document).on("click", ".viewbtn", function(){
           $(this).parent().parent().parent().parent().children(".displaybox").toggle();

@@ -1,0 +1,23 @@
+{
+	"Home":
+	{
+		"link":"index.php"
+	},
+	"Beginniner's Guide":
+	{
+		"link":"beginner.php"
+	},
+	"HTML Tutorial":
+	{
+		"link":"htmlappendix.php",
+		"dropdown": 
+		{
+			"Tables":"htmltables.php",
+			"Divs":"htmldivs.php"
+		}
+	},
+	"CSS Tutorial":
+	{
+		"link":"cssappendix.php",
+	}
+}

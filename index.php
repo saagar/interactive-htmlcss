@@ -1,4 +1,6 @@
-
+<?
+	require_once("helpers.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,8 +17,6 @@
     <link href="css/yeti.css" rel="stylesheet">
     <link href="css/pygments-manni.css" rel="stylesheet">
 
-
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -31,19 +31,31 @@
 
   <body>
 
+  <? generateNavbar(); ?>
+
     <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
+   <!--  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Homepage</a>
-        </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.php">Home</a></li> 
-            <li class="inactive"><a href="htmlappendix.php">HTML Appendix</a></li>         
-        </div><!--/.nav-collapse -->
+            <li class="inactive"><a href="htmlappendix.php">HTML Appendix</a></li>
+            <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="#">Action</a></li>
+		          <li><a href="#">Another action</a></li>
+		          <li><a href="#">Something else here</a></li>
+		          <li class="divider"></li>
+		          <li><a href="#">Separated link</a></li>
+		          <li class="divider"></li>
+		          <li><a href="#">One more separated link</a></li>
+		        </ul>
+		    </li>
+          </ul>        
+        </div>
       </div>
-    </div>
+    </div> -->
 
 
 	 <!-- Carousel
