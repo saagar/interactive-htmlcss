@@ -1,3 +1,6 @@
+<?
+  require_once("helpers.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,36 +15,23 @@
     <!-- Bootstrap core CSS -->
     <link href="css/yeti.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+      @media (min-width: 980px) { body { padding-top: 60px; } }
+    </style>
+
   </head>
 
   <body>
 
-    <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Interactive Demo</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>            
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+  <? generateNavbar(); ?>
 
     <div class="container">
 
@@ -118,11 +108,12 @@ h1 {background-color:#6495ed;color:sienna;}';
     <? // load if $_POST sent ?>
     <?php if (isset($_POST["formid"])) : ?>
     <script type='text/javascript'>
-       //Code runs ONLY if $test_details['done_test'] is empty
+       <?//Code runs ONLY if $test_details['done_test'] is empty?>
        $(document).ready(function(){
          interact();
        });
     </script>
     <?php endif; ?>
+
   </body>
 </html>

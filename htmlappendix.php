@@ -18,7 +18,7 @@
     <style type="text/css">
       /*@media (min-width: 980px) { body { padding-top: 120px; } }*/
     </style>
-
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -34,6 +34,7 @@
   <body data-spy="scroll" data-target="#navbar-scroller" data-offset="70">
 
     <? generateNavbar(); ?>
+    <div id="css-items" style="display:none;"></div>
 
     <!-- Carousel
     ================================================== -->
@@ -106,6 +107,12 @@
     <script id="pagenav-template" type="text/x-handlebars-template">
       {{#each htmlitem}}
         <li><a href="#{{topic}}">{{topic}}</a></li>
+      {{/each}}
+    </script>
+
+    <script id="css-template" type="text/x-handlebars-template">
+      {{#each htmlitem}}
+        <style>{{{css}}}</style>
       {{/each}}
     </script>
 
