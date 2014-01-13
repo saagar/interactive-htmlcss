@@ -16,7 +16,8 @@
     <link href="css/yeti.css" rel="stylesheet">
     <link href="css/pygments-manni.css" rel="stylesheet">
     <style type="text/css">
-      /*@media (min-width: 980px) { body { padding-top: 120px; } }*/
+      /* enable this if there is no Carousel */
+      @media (min-width: 980px) { body { padding-top: 60px; } }
     </style>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,6 +28,7 @@
 
     <!-- Custom styles for this template -->
     <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
+    <!-- carousel css styling -->
     <link href="css/carousel.css" rel="stylesheet">
 
   </head>
@@ -36,11 +38,21 @@
     <? generateNavbar(); ?>
     <div id="css-items" style="display:none;"></div>
 
+     <!-- Main jumbotron -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, table!</h1>
+        <p>This page will teach you about HTML tables.</p>
+        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+    <!--   <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -79,7 +91,8 @@
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
+    </div> -->
+    <!-- /.carousel -->
 
 
    <!--  <div id="side-nav" class="col-sm-2 hidden-xs hidden-sm hidden-print">
