@@ -31,7 +31,7 @@
 
   <body>
 
-  <? generateNavbar(); ?>
+  <? generateNavbar("nav.json"); ?>
 
     <div class="container">
 

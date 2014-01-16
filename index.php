@@ -30,7 +30,7 @@
 
   <body>
 
-  <? generateNavbar(); ?>
+  <? generateNavbar("nav.json"); ?>
 
 	 <!-- Carousel
     ================================================== -->
@@ -47,7 +47,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>What's a website?</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
             </div>
           </div>
@@ -57,7 +56,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Build pages with HTML basics!</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
           </div>
@@ -67,7 +65,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Style your site with CSS!</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>

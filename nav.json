@@ -2,12 +2,12 @@
 	"1":
 	{
 		"name":"Home",
-		"link":"index.php"
+		"link":"/interactive-htmlcss/index.php"
 	},
 	"2":
 	{
 		"name":"Beginner's Guide",
-		"link":"beginner.php"
+		"link":"/interactive-htmlcss/beginner.php"
 	},
 	"3":
 	{
@@ -18,36 +18,36 @@
 			"1":
 			{
 				"name":"Tables",
-				"link":"htmltables.php"
+				"link":"/interactive-htmlcss/content/html/htmltables.php"
 			},
 			"2":
 			{
 				"name":"Divs",
-				"link":"htmldivs.php"
+				"link":"/interactive-htmlcss/htmldivs.php"
 			}
 		}
 	},
 	"4":
 	{
 		"name":"CSS Appendix",
-		"link":"cssappendix.php",
+		"link":"#",
 		"dropdown": 
 		{
 			"1":
 			{
 				"name":"item1",
-				"link":"htmltables.php"
+				"link":"/interactive-htmlcss/content/html/htmltables.php"
 			},
 			"2":
 			{
 				"name":"item2",
-				"link":"htmldivs.php"
+				"link":"/interactive-htmlcss/htmldivs.php"
 			}
 		}
 	},
 	"5":
 	{
 		"name":"Interactive Editor",
-		"link":"interact.php"
+		"link":"/interactive-htmlcss/interact.php"
 	}
 }

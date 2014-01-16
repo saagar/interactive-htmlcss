@@ -1,8 +1,9 @@
 <?
 
-	function generateNavbar(){
+	function generateNavbar($nav_json_location){
 		// get the nav json
-		$nav_json = file_get_contents("nav.json");
+		//"../../nav.json"
+		$nav_json = file_get_contents($nav_json_location);
 
 		// start nav
 		print '<div class="navbar navbar-default navbar-fixed-top" role="navigation">';
